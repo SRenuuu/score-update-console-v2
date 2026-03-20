@@ -20,7 +20,7 @@ export default function Over() {
     const [bowler, setBowler] = useState('');
     const { updateBowler } = useNewOver();
 
-    const { setMatch } = useMatchSetup();
+    useMatchSetup();
     const { team, field } = useInning();
     const { documents } = useCollection('players');
 

@@ -7,7 +7,6 @@ import { useInning } from '../hooks/useInning'
 
 export const useNewOver = () => {
     let navigate = useNavigate();
-    const [error, setError] = useState(null);
     const { inning, team, updateOver } = useInning();
 
     const updateBowler = async (bowler) => {
