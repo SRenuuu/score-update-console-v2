@@ -10,6 +10,7 @@ import Over from './pages/over/Over';
 import Players from './pages/players/Players';
 import Setup from './pages/setup/setup';
 import Wicket from './pages/wicket/Wicket';
+import Notifications from './pages/notifications/Notifications';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -43,6 +44,10 @@ function App() {
           <Route 
             exact path="/over" 
             element={ user ? <Over/> : <Navigate to="/login" />} 
+          />
+          <Route 
+            exact path="/notifications" 
+            element={ user ? <Notifications/> : <Navigate to="/login" />} 
           />
           <Route path="/login" element={user ? <Navigate to="/" /> : <Login/>} />
         </Routes>
