@@ -5,7 +5,7 @@ import { db } from "../firebase/config";
 import { useInning } from '../hooks/useInning';
 
 export const useAddScore = () => {
-    const [error, setError] = useState(null);
+    const [error] = useState(null);
     const { balls, currentPlayer, addScore, player1, player2, inning, bowler, team } = useInning();
 
     const liveRef = doc(db, 'main', 'live');
@@ -13,9 +13,9 @@ export const useAddScore = () => {
     const updateScore = async (score) => {
 
         const currentBall = balls+1;
-        const strickerName = (currentPlayer == "player1") ? player1 : player2;
-        const isFour = (score == 4) ? 1 : 0;
-        const isSix = (score == 6) ? 1 : 0;
+        const strickerName = (currentPlayer === "player1") ? player1 : player2;
+        const isFour = (score === 4) ? 1 : 0;
+        const isSix = (score === 6) ? 1 : 0;
 
         const battingQuery = query(collection(db, "batting"), where("inning", "==", inning), where("name", "==", strickerName));
         const bowlingQuery = query(collection(db, "bowling"), where("inning", "==", inning), where("name", "==", bowler));
