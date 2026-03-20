@@ -9,6 +9,7 @@ import PeopleIcon from '@mui/icons-material/People';
 import SportsCricketIcon from '@mui/icons-material/SportsCricket';
 import CommentIcon from '@mui/icons-material/Comment';
 import SportsHandballIcon from '@mui/icons-material/SportsHandball';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
 export const menuItems = (
   <React.Fragment>
@@ -47,6 +48,12 @@ export const menuItems = (
         <SettingsIcon />
       </ListItemIcon>
       <ListItemText primary="Setup" />
+    </ListItemButton>
+    <ListItemButton component={Link} to="/notifications">
+      <ListItemIcon>
+        <NotificationsActiveIcon />
+      </ListItemIcon>
+      <ListItemText primary="Notifications" />
     </ListItemButton>
   </React.Fragment>
 );
